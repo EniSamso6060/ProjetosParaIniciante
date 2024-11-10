@@ -18,7 +18,7 @@ Translated with DeepL.com (free version)
 
 public class Main {
 
-    public static void InitialGameMessage(){
+    public static void initialGameMessage(){
         System.out.println("----SEJA BEM VINDO AO JOGO DE ADVINHAR O NUMERO----");
         System.out.println();
         System.out.println("""
@@ -30,7 +30,7 @@ public class Main {
                 """);
     }
 
-    public static void PlayerWinMessage(int count){
+    public static void playerWinMessage(int count){
         if (count == 0){
             System.out.println("Vai jogar na loteria, pois sua sorte é grande!!!");
             System.out.println("""
@@ -74,7 +74,7 @@ public class Main {
             System.out.println();
         } else {
             System.out.println("Parabens pela Vitoria. Não teve muita sorte mais foi um bom jogo!");
-            System.out.println("Tome um bolo");
+            System.out.println("Tome um um café");
             System.out.println("""
                     ─▄▀─▄▀
                     ──▀──▀
@@ -86,7 +86,7 @@ public class Main {
         }
     }
 
-    public static void NotEqualMessage(int userNum, int secretNum){
+    public static void notEqualMessage(int userNum, int secretNum){
         if (userNum > secretNum){
             System.out.println("Seu numero é MAIOR que o numero secreto");
         } else {
@@ -99,22 +99,22 @@ public class Main {
         int UserNum;
         int Count = 0;
 
-        Scanner MyScanner = new Scanner(System.in);
-        InitialGameMessage();
+        Scanner myScanner = new Scanner(System.in);
+        initialGameMessage();
         while(true){
             System.out.print("---Qual é o numero secreto?: ");
             try{
-                UserNum = MyScanner.nextInt();
+                UserNum = myScanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("---Inserir apenas numeros por favor!---");
                 continue;
             }
 
             if (UserNum == RandomNum) {
-                PlayerWinMessage(Count);
+                playerWinMessage(Count);
                 break;
             } else {
-                NotEqualMessage(UserNum, RandomNum);
+                notEqualMessage(UserNum, RandomNum);
                 Count++;
             }
         }
